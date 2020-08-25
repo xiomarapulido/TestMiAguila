@@ -4,10 +4,11 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
 
-
-
 @NgModule({
-  declarations: [LayoutComponent, MenuComponent],
+  declarations: [
+    LayoutComponent,
+    MenuComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule
