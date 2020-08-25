@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
-import { itemUser } from '../../const/general-const';
+import { itemUser, idOrigin } from '../../const/general-const';
 import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
@@ -12,12 +12,14 @@ export class SubmenuComponent implements OnInit {
 
   submenu: any;
   favorites: any;
-  itemUserActive = true;
+  originDefault: any;
+  destinationDefault: any;
   defaultCoordinates: any;
+  itemUserActive = true;
 
 
   constructor(private readonly service: HomeService,
-              private readonly sharedService: SharedService) { }
+    private readonly sharedService: SharedService) { }
 
   ngOnInit() {
     this.getSubmenu();
@@ -37,17 +39,24 @@ export class SubmenuComponent implements OnInit {
       (data: any) => {
 
         this.favorites = data.favorites;
-        const originDefault = this.favorites[0].directions.find(item => item.active === true).coordinates;
-        const destinationDefault = this.favorites[1].directions.find(item => item.active === true).coordinates;
+        const originData = this.favorites[0].directions.find(item => item.active === true).coordinates;
+        const destinationData = this.favorites[1].directions.find(item => item.active === true).coordinates;
 
-        this.defaultCoordinates = {
-          origin: originDefault,
-          destination: destinationDefault
-        };
-
-        this.sharedService.getSetDefaultCoordinates(this.defaultCoordinates);
+        this.sendCoordinates(originData, destinationData);
       }
     );
+  }
+
+  sendCoordinates(origin, destination) {
+    this.originDefault = origin;
+    this.destinationDefault = destination;
+
+    this.defaultCoordinates = {
+      origin: this.originDefault,
+      destination: this.destinationDefault
+    };
+
+    this.sharedService.getSetDefaultCoordinates(this.defaultCoordinates);
   }
 
   changeItemActive(item, index) {
@@ -58,6 +67,24 @@ export class SubmenuComponent implements OnInit {
       this.itemUserActive = false;
     }
     this.submenu[index].active = true;
+  }
+
+  changeCoordinates(data, index) {
+
+    if (data.id === idOrigin) {
+      this.favorites[0].directions.find(item => item.active === true).active = false;
+      this.favorites[0].directions[index].active = true;
+      const origin = data.directions[index].coordinates;
+      this.sendCoordinates(origin, this.destinationDefault);
+    } else {
+      this.favorites[1].directions.find(item => item.active === true).active = false;
+      this.favorites[1].directions[index].active = true;
+      const destination = data.directions[index].coordinates;
+      this.sendCoordinates(this.originDefault, destination);
+    }
+
+
+
   }
 
 

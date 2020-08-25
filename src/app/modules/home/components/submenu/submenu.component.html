@@ -21,8 +21,8 @@
         <div class="content-favorites">
             <p class="title">Favoritos</p>
 
-            <div *ngFor="let item of data.directions">
-                <div [ngClass]="{'wrap-options-active': item.active, 'wrap-options': !item.active }">
+            <div *ngFor="let item of data.directions; let i = index">
+                <div [ngClass]="{'wrap-options-active': item.active, 'wrap-options': !item.active }" (click)="changeCoordinates(data, i)">
                     <div class="content-direction">
                         <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
                     </div>
