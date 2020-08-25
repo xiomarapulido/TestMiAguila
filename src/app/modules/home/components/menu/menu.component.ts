@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   constructor(private readonly service: HomeService) { }
 
   user: DataUserModel;
-  menu;
+  menu: any;
 
   ngOnInit() {
     this.getUser();
@@ -34,10 +34,7 @@ export class MenuComponent implements OnInit {
     this.service.getMenuData().subscribe(
       (data: any) => {
         this.menu = data.items;
-
-        console.log(this.menu)
       }
     );
   }
-
 }

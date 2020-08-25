@@ -1,0 +1,33 @@
+{
+   
+    "favorites":
+    [
+        {
+            "name": "Origen",
+            "id": "1",
+            "directions":[
+                {
+                    "active": true,
+                    "name":"Trabajo",
+                    "Description":"Calle 100 # 35-92",
+                    "lat": 29.8174782, 
+                    "lng": -95.6814757
+                }
+            ]
+        },
+        {
+            "name": "Destino",
+            "id": "2",
+            "directions":[
+                {
+                    "active": true,
+                    "name":"Casa",
+                    "Description":"Calle 24 # 32-34",
+                    "lat": 40.6976637, 
+                    "lng": -74.119764 
+                }
+            ]
+        }
+    ]
+
+}

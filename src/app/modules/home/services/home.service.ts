@@ -16,4 +16,12 @@ export class HomeService {
     return this.httpClient.get('../../../../assets/data/menuData.json');
   }
 
+  getSubmenuData() {
+    return this.httpClient.get('../../../../assets/data/submenuData.json');
+  }
+
+  getFavoritesData() {
+    return this.httpClient.get('../../../../assets/data/favoritesData.json');
+  }
+
 }

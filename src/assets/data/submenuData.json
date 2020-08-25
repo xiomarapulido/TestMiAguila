@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "id": "user",
+            "name": "Para mi",
+            "icon": "fa-user",
+            "active": true
+        },
+        {
+            "id": "colleague",
+            "name": "Colega",
+            "icon": "fa-users",
+            "active": false
+        },
+        {
+            "id": "guest",
+            "name": "Invitado",
+            "icon": "fa-user-plus",
+            "active": false
+        }
+    ]
+}

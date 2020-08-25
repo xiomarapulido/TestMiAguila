@@ -1,0 +1,37 @@
+<div class="submenu">
+    <div class="header-banner"></div>
+    <div class="header-options">
+        <div class="wrap-options" *ngFor="let item of submenu; let i = index">
+            <div [ngClass]="{'content-options-active': item.active, 'content-options-inactive': !item.active }"
+                (click)="changeItemActive(item, i)">
+                <i class="fa {{ item.icon }} icon-data" aria-hidden="true"></i>
+                <p class="label-options">{{ item.name }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="line-options"></div>
+
+    <div *ngFor="let data of favorites">
+        <div class="body-opctions">
+            <div class="step-active">{{ data.id }}</div>
+            <p class="text-step">{{ data.name }}</p>
+        </div>
+        <hr class="line">
+        <div class="banner-search"></div>
+        <div class="content-favorites">
+            <p class="title">Favoritos</p>
+
+            <div *ngFor="let item of data.directions" class="wrap-options">
+                <div class="content-direction">
+                    <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
+                </div>
+                <div class="content-direction-data ">
+                    <p class="name-direction">{{ item.name }}</p>
+                    <p class="direction">{{ item.Description }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

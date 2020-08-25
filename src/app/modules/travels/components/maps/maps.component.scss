@@ -1,8 +1,11 @@
-@import '../../../../../styles.scss';
+@import "../../../../../styles.scss";
 
-.wrap-map{
-    margin-left: 190px !important;
-    agm-map {
-        height: 650px;
-    }
+.wrap-map {
+  margin-left: 158px;
+  margin-top: -20px;
+  margin-right: -30px;
+  height: calc(100vw);
+  agm-map {
+    height: calc(100vw);
+  }
 }
