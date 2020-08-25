@@ -1,0 +1,18 @@
+@import '../../../../../styles.scss';
+
+.layout {
+    .layout-content-menu {
+        background-color: white;
+    }
+
+    .layout-content-router {
+        background-color: red;
+        width: calc(100vw);
+        height: 500px;
+
+        .content-router {
+          
+        }
+
+    }
+}

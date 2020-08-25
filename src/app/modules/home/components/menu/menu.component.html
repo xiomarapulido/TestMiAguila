@@ -1,0 +1,20 @@
+<div class="menu">
+    <img src="../../../../../assets/images/mi-aguila-icon.png">
+    <div class="text-center content-user-data">
+        <i class="fa fa-user icon-data"></i>
+        <p class="nameUser">{{ user.nameUser }}</p>
+        <label class="typeUser">{{ user.typeUser }}</label>
+
+
+    </div>
+    <hr class="line">
+    <div *ngFor="let item of menu" class="content-item">
+        <div class="panel-item">
+        </div>
+        <div class="content-data-item">
+            <i class="fa {{ item.icon }} icon-data" aria-hidden="true"></i>
+            <label class="item">{{ item.name }}</label>
+        </div>
+    </div>
+
+</div>

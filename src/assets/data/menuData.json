@@ -1,0 +1,32 @@
+{
+    "items":[
+        {
+            "name": "Pedir Aguila",
+            "icon": "fa-check-circle-o"
+        },
+        {
+            "name": "Vuelos",
+            "icon": "fa-map-marker"
+        },
+        {
+            "name": "Rutas",
+            "icon": "fa-road"
+        },
+        {
+            "name": "Administrar",
+            "icon": "fa-cog"
+        },
+        {
+            "name": "Estadisticas",
+            "icon": "fa-signal"
+        },
+        {
+            "name": "Medios de Pago",
+            "icon": "fa-credit-card"
+        },
+        {
+            "name": "Cerrar Sesion",
+            "icon": "fa-sign-out"
+        }
+    ]
+}
