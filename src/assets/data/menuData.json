@@ -1,32 +1,46 @@
 {
-    "items":[
+    "items": [
         {
+            "active": true,
             "name": "Pedir Aguila",
-            "icon": "fa-check-circle-o"
+            "icon": "fa-check-circle-o",
+            "id": "1"
         },
         {
+            "active": false,
             "name": "Vuelos",
-            "icon": "fa-map-marker"
+            "icon": "fa-map-marker",
+            "id": "2"
         },
         {
+            "active": false,
             "name": "Rutas",
-            "icon": "fa-road"
+            "icon": "fa-road",
+            "id": "3"
         },
         {
+            "active": false,
             "name": "Administrar",
-            "icon": "fa-cog"
+            "icon": "fa-cog",
+            "id": "4"
         },
         {
+            "active": false,
             "name": "Estadisticas",
-            "icon": "fa-signal"
+            "icon": "fa-signal",
+            "id": "5"
         },
         {
+            "active": false,
             "name": "Medios de Pago",
-            "icon": "fa-credit-card"
+            "icon": "fa-credit-card",
+            "id": "6"
         },
         {
+            "active": false,
             "name": "Cerrar Sesion",
-            "icon": "fa-sign-out"
+            "icon": "fa-sign-out",
+            "id": "7"
         }
     ]
 }

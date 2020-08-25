@@ -1,5 +1,9 @@
 <div class="submenu">
-    <div class="header-banner"></div>
+    <i class="fa fa-minus-square icon-collapse" aria-hidden="true" data-toggle="collapse"
+        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></i>
+
+    <div class="header-banner">
+    </div>
     <div class="header-options">
         <div class="wrap-options" *ngFor="let item of submenu; let i = index">
             <div [ngClass]="{'content-options-active': item.active, 'content-options-inactive': !item.active }"
@@ -11,30 +15,36 @@
     </div>
     <div class="line-options"></div>
 
-    <div *ngFor="let data of favorites">
-        <div class="body-opctions">
-            <div class="step-active">{{ data.id }}</div>
-            <p class="text-step">{{ data.name }}</p>
-        </div>
-        <hr class="line">
-        <div class="banner-search"></div>
-        <div class="content-favorites">
-            <p class="title">Favoritos</p>
+    <div id="collapseOne" class="collapse show">
 
-            <div *ngFor="let item of data.directions; let i = index">
-                <div [ngClass]="{'wrap-options-active': item.active, 'wrap-options': !item.active }" (click)="changeCoordinates(data, i)">
-                    <div class="content-direction">
-                        <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
-                    </div>
-                    <div class="content-direction-data ">
-                        <p class="name-direction">{{ item.name }}</p>
-                        <p class="direction">{{ item.Description }}</p>
+        <div *ngIf="itemActive == itemUser">
+            <div *ngFor="let data of favorites">
+                <div class="body-opctions">
+                    <div class="step-active">{{ data.id }}</div>
+                    <p class="text-step">{{ data.name }}</p>
+                </div>
+                <hr class="line">
+                <div class="banner-search"></div>
+                <div class="content-favorites">
+                    <p class="title">Favoritos</p>
+
+                    <div *ngFor="let item of data.directions; let i = index">
+                        <div [ngClass]="{'wrap-options-active': item.active, 'wrap-options': !item.active }"
+                            (click)="changeCoordinates(data, i)">
+                            <div class="content-direction">
+                                <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
+                            </div>
+                            <div class="content-direction-data ">
+                                <p class="name-direction">{{ item.name }}</p>
+                                <p class="direction">{{ item.Description }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
+        </div>
+        <div *ngIf="itemActive != itemUser" class="content-no-search-results">
+            <i class="fa fa-cogs icon-data" aria-hidden="true"></i>
         </div>
     </div>
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HomeService } from '../../services/home.service';
-import { itemUser, idOrigin } from '../../const/general-const';
+import { itemUser, idOrigin, itemUserId } from '../../const/general-const';
 import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
@@ -10,14 +10,16 @@ import { SharedService } from '../../../shared/services/shared.service';
 })
 export class SubmenuComponent implements OnInit {
 
+  @Input() itemActive;
+  
   submenu: any;
   favorites: any;
   originDefault: any;
   destinationDefault: any;
   defaultCoordinates: any;
   itemUserActive = true;
-
-
+  itemUser = itemUserId;
+ 
   constructor(private readonly service: HomeService,
     private readonly sharedService: SharedService) { }
 

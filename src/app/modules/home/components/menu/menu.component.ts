@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { DataUserModel } from '../../models/dataUser';
 
@@ -9,10 +9,12 @@ import { DataUserModel } from '../../models/dataUser';
   providers: [HomeService]
 })
 export class MenuComponent implements OnInit {
-  constructor(private readonly service: HomeService) { }
 
+  @Output() currentItemMenu: EventEmitter<string> = new EventEmitter();
   user: DataUserModel;
   menu: any;
+
+  constructor(private readonly service: HomeService) { }
 
   ngOnInit() {
     this.getUser();
@@ -34,7 +36,15 @@ export class MenuComponent implements OnInit {
     this.service.getMenuData().subscribe(
       (data: any) => {
         this.menu = data.items;
+        const itemActive: string = this.menu.find(item => item.active === true).id;
+        this.currentItemMenu.emit(itemActive);
       }
     );
+  }
+
+  changeItemActive(item, index) {
+    this.menu.find(data => data.active === true).active = false;
+    this.menu[index].active = true;
+    this.currentItemMenu.emit(item.id);
   }
 }

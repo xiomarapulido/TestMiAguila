@@ -8,12 +8,14 @@
 
     </div>
     <hr class="line">
-    <div *ngFor="let item of menu" class="content-item">
-        <div class="panel-item">
-        </div>
-        <div class="content-data-item">
-            <i class="fa {{ item.icon }} icon-data" aria-hidden="true"></i>
-            <label class="item">{{ item.name }}</label>
+    <div *ngFor="let item of menu; let i = index">
+        <div [ngClass]="{'content-item-active': item.active, 'content-item': !item.active }" (click)="changeItemActive(item, i)">
+            <div class="panel-item">
+            </div>
+            <div class="content-data-item">
+                <i class="fa {{ item.icon }} icon-data" aria-hidden="true"></i>
+                <label class="item">{{ item.name }}</label>
+            </div>
         </div>
     </div>
 
