@@ -1,3 +1,8 @@
-agm-map {
-    height: 300px;
+@import '../../../../../styles.scss';
+
+.wrap-map{
+    margin-left: 190px !important;
+    agm-map {
+        height: 650px;
+    }
 }

@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  title = 'AGM project';
   latitude: number;
   longitude: number;
   zoom: number;
@@ -18,7 +17,6 @@ export class MapsComponent implements OnInit {
     this.setCurrentLocation();
   }
 
-    // Get Current Location Coordinates
     private setCurrentLocation() {
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition((position) => {
