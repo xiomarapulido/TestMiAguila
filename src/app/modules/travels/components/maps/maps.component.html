@@ -1,6 +1,5 @@
-
 <div class="wrap-map">
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-            </agm-map>
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+    </agm-map>
 </div>

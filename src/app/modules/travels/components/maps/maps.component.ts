@@ -7,24 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  latitude: number;
-  longitude: number;
-  zoom: number;
+  lat = 41.85
+  lng = -87.65
+
+  origin = { lat: 29.8174782, lng: -95.6814757 }
+  destination = { lat: 40.6976637, lng: -74.119764 }
+
 
   constructor() { }
 
   ngOnInit() {
-    this.setCurrentLocation();
   }
-
-    private setCurrentLocation() {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.latitude = position.coords.latitude;
-          this.longitude = position.coords.longitude;
-          this.zoom = 15;
-        });
-      }
-    }
 
 }
