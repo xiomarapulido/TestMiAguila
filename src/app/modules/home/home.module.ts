@@ -4,6 +4,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { SubmenuComponent } from './components/submenu/submenu.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SubmenuComponent } from './components/submenu/submenu.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

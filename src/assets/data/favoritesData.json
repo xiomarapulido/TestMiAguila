@@ -1,33 +1,61 @@
 {
-   
-    "favorites":
-    [
+    "favorites": [
         {
             "name": "Origen",
             "id": "1",
-            "directions":[
+            "directions": [
                 {
                     "active": true,
-                    "name":"Trabajo",
-                    "Description":"Calle 100 # 35-92",
-                    "lat": 29.8174782, 
-                    "lng": -95.6814757
+                    "name": "Casa",
+                    "Description": "Carrera. 27 # 48a Sur-1",
+                    "coordinates": {
+                        "lat": 4.5821474,
+                        "lng": -74.1316118
+                    }
+                },
+                {
+                    "active": false,
+                    "name": "Casa mamá",
+                    "Description": "Transversal 2 #48a-2 ",
+                    "coordinates": {
+                        "lat": 4.6349656, 
+                        "lng": -74.062174
+                    }
                 }
             ]
         },
         {
             "name": "Destino",
             "id": "2",
-            "directions":[
+            "directions": [
                 {
                     "active": true,
-                    "name":"Casa",
-                    "Description":"Calle 24 # 32-34",
-                    "lat": 40.6976637, 
-                    "lng": -74.119764 
+                    "name": "Universidad",
+                    "Description": "Calle 68b Sur # 45-9",
+                    "coordinates": {
+                        "lat": 4.5738946,
+                        "lng": -74.1548429
+                    }
+                },
+                {
+                    "active": false,
+                    "name": "Trabajo",
+                    "Description": "Calle 84 # 21-65",
+                    "coordinates": {
+                        "lat": 4.672178, 
+                        "lng": -74.061423 
+                    }
+                },
+                {
+                    "active": false,
+                    "name": "Aeropuerto",
+                    "Description": "El Dorado, Bogotá",
+                    "coordinates": {
+                        "lat": 4.702995, 
+                        "lng": -74.145280
+                    }
                 }
             ]
         }
     ]
-
 }

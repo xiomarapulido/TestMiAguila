@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-maps',
@@ -7,16 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  lat = 41.85
-  lng = -87.65
+  lat = 4.570868
+  lng = -74.297333
 
-  origin = { lat: 29.8174782, lng: -95.6814757 }
-  destination = { lat: 40.6976637, lng: -74.119764 }
+  origin: any;
+  destination: any;
 
-
-  constructor() { }
+  constructor(private readonly service: SharedService) { }
 
   ngOnInit() {
+    this.service.getSetDefaultCoordinates().subscribe(
+      data => {
+        this.origin = data.origin;
+        this.destination = data.destination;
+      }
+    )
   }
 
 }

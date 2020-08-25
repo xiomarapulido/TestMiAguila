@@ -21,15 +21,19 @@
         <div class="content-favorites">
             <p class="title">Favoritos</p>
 
-            <div *ngFor="let item of data.directions" class="wrap-options">
-                <div class="content-direction">
-                    <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
-                </div>
-                <div class="content-direction-data ">
-                    <p class="name-direction">{{ item.name }}</p>
-                    <p class="direction">{{ item.Description }}</p>
+            <div *ngFor="let item of data.directions">
+                <div [ngClass]="{'wrap-options-active': item.active, 'wrap-options': !item.active }">
+                    <div class="content-direction">
+                        <i class="fa fa-star-o icon-data" aria-hidden="true"></i>
+                    </div>
+                    <div class="content-direction-data ">
+                        <p class="name-direction">{{ item.name }}</p>
+                        <p class="direction">{{ item.Description }}</p>
+                    </div>
                 </div>
             </div>
+
+
 
         </div>
     </div>
